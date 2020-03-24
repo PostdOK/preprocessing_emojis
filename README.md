@@ -14,10 +14,12 @@ For the preprocessing there was no starting point in terms of existing code.
 ### Extend (or build) dictionaries
 The Script ***parse_utf8hex_dictionary.R*** can be used to parse dictionaries from https://www.utf8-chartable.de (Credits to Micha Köllerwirth). However, it can be customized for other sources as well.
 
-The function  is adding new utf8hex-dictionaries to existing utf8hex-dictionaries. 
+The function ***add_new_dictionary.R*** is adding new utf8hex-dictionaries to existing utf8hex-dictionaries. 
 
 ### Transform text with emojis and other sc
-The functions ***read_emojis.R*** and ***read_utf8hex.R*** transforms utf8hex codes into text that can be used for text mining purposes, especially automated text classification. read_emojis.R is equal to read_utf8hex.R - I added it as an extra file with a different name to improve visibility.
+The functions ***read_emojis.R*** (not uploaded yet) and ***read_utf8hex.R*** transforms utf8hex codes into text that can be used for text mining purposes, especially automated text classification. read_emojis.R is equal to read_utf8hex.R - I added it as an extra file with a different name to improve visibility.
+
+I'll also add a script dealing with further issues manually in the near future.
 
 ## Further Notes
 I'll share my text classification scripts after the respective research is published, if possible.
