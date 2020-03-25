@@ -1,11 +1,11 @@
 # preprocessing_emojis
-Scripts to preprocess text data that includes emojis and other special characters.
+Scripts to preprocess text data that includes emojis and other special characters in R.
 
 ## Goal
 Preprocess text data, mostly tweets, that includes **emojis** and other special characters, e.g. **dingbats** or **Mathematical Alphanumeric Symbols**. I started to do so for automated text classification issues, but it can be used for a variety of text mining issues, including all the fancy low level stuff like *wordclouds* or *term frequencies*
 
 ## Content
-This repository includes lots of code to extent or build utf8hex-dictionaries, as well as some dictionaries as .csv-files, and code to preprocess emojis and other special characters for text mining purposes.
+This repository includes lots of code to extent or build utf8hex-dictionaries, as well as some dictionaries as .csv-files, and code to preprocess emojis and other special characters for text mining purposes. As you will note, all scripts are based on text that was converted to ascii before. Example: <f0><9f><a5><b1> becomes *yawning_face*
 
 My starting point for utf8hex-dictionaries was the dictionary of “today-is-a-good-day” (https://github.com/today-is-a-good-day), which you can find here: https://github.com/today-is-a-good-day/emojis/blob/master/emojis.csv
 
