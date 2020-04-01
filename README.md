@@ -17,9 +17,9 @@ The Script ***parse_utf8hex_dictionary.R*** can be used to parse dictionaries fr
 The function ***add_new_dictionary.R*** is adding new utf8hex-dictionaries to existing utf8hex-dictionaries. 
 
 ### Transform text with emojis and other sc
-The functions ***read_emojis.R*** (not uploaded yet) and ***read_utf8hex.R*** transforms utf8hex codes into text that can be used for text mining purposes, especially automated text classification. read_emojis.R is equal to read_utf8hex.R - I added it as an extra file with a different name to improve visibility.
+The function ***read_utf8hex.R*** transforms utf8hex codes into text that can be used for text mining purposes, especially automated text classification.
 
-I'll also add a script dealing with further issues manually in the near future.
+I also added the script ***read_emojis.R***, which is showing the process of preparing a dictionary and transforming text all at one place. Thus, it includes some snippets from the other functions. The example is based on emojis. This script also shows how to deal with further issues manually.
 
 ## Further Notes
 I'll share my text classification scripts after the respective research is published, if possible.
