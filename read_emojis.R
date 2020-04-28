@@ -47,15 +47,15 @@ emoji_Dictionary$description<-gsub("â€","'",emoji_Dictionary$description)
 # For the dictionary I add a column with the length of each string to sort them.
 # This is important because emojis now can consist of sequences of utf8hex codepoints, which could stand alone as well.
 # Thus, the dictionary is sorted by the length of the complete utf8hex codes in decreasing order
-text<-iconv(text, from = "latin1", to = "ascii", sub = "byte")
+text$text<-iconv(text$text, from = "latin1", to = "ascii", sub = "byte")
 emoji_Dictionary[,"nCharDescp"]<-nchar(emoji_Dictionary$r_encoding)
 emoji_Dictionary<-emoji_Dictionary[order(emoji_Dictionary$nCharDescp, decreasing = TRUE),]
 
 # Now I can transform all emojis into the desired form, using my ugly loop. I promise to fix that soon
-for (i in 1:nrow(emoji_Dictionary)){
-  if (str_count(emoji_Dictionary$text[i],"<")>0){
-    for (j in 1:nrow(emDict_raw)){
-      emoji_Dictionary$text[i]<-gsub(emDict_raw$r_encoding[j],paste("*",emDict_raw$description[j],"* ",sep = ""),emoji_Dictionary$text[i])
+for (i in 1:nrow(text)){
+  if (str_count(text$text[i],"<")>0){
+    for (j in 1:nrow(emoji_Dictionary)){
+      text$text[i]<-gsub(emoji_Dictionary$r_encoding[j],paste("*",emoji_Dictionary$description[j],"* ",sep = ""),text$text[i])
     }
   }
 }
@@ -65,8 +65,8 @@ for (i in 1:nrow(emoji_Dictionary)){
 # 
 # Example 1: remove variation selectors. except you need the information -> then replace
 # e.g. the text style variation selector (15)
-emoji_Dictionary$description<-gsub("<ef><b8><8e>","",emoji_Dictionary$description)
+text$text<-gsub("<ef><b8><8e>","",text$text)
 # Example 2: Letters with accent or diaeresis. If there is a dictionary out there, please let me know
 # e.g. accent aigu (acute accent) over e and diaeresis over o
-emoji_Dictionary$description<-gsub("<c3><a8>","e",emoji_Dictionary$description)
-emoji_Dictionary$description<-gsub("<c3><b6>","o",emoji_Dictionary$description)
+text$text<-gsub("<c3><a8>","e",text$text)
+text$text<-gsub("<c3><b6>","o",text$text)
