@@ -20,6 +20,3 @@ The function ***add_new_dictionary.R*** is adding new utf8hex-dictionaries to ex
 The function ***read_utf8hex.R*** transforms utf8hex codes into text that can be used for text mining purposes, especially automated text classification.
 
 I also added the script ***read_emojis.R***, which is showing the process of preparing a dictionary and transforming text all at one place. Thus, it includes some snippets from the other functions. The example is based on emojis. This script also shows how to deal with further issues manually.
-
-## Further Notes
-I'll share my text classification scripts after the respective research is published, if possible.
