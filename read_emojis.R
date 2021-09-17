@@ -51,14 +51,8 @@ text$text<-iconv(text$text, from = "latin1", to = "ascii", sub = "byte")
 emoji_Dictionary[,"nCharDescp"]<-nchar(emoji_Dictionary$r_encoding)
 emoji_Dictionary<-emoji_Dictionary[order(emoji_Dictionary$nCharDescp, decreasing = TRUE),]
 
-# Now I can transform all emojis into the desired form, using my ugly loop. I promise to fix that soon
-for (i in 1:nrow(text)){
-  if (str_count(text$text[i],"<")>0){
-    for (j in 1:nrow(emoji_Dictionary)){
-      text$text[i]<-gsub(emoji_Dictionary$r_encoding[j],paste("*",emoji_Dictionary$description[j],"* ",sep = ""),text$text[i])
-    }
-  }
-}
+# Now I can transform all emojis into the desired form using stri_replace_all_fixed from stringr
+text$text <- stri_replace_all_fixed(text$text,emoji_Dictionary$r_encoding,emoji_Dictionary$description,vectorize_all = FALSE)
 
 # Manual replacing 
 # Sometimes things need to be transformed manually. Here are some examples:
