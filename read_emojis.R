@@ -1,6 +1,7 @@
 #Required packages and settings. Note, stringAsFactors=FALSE will soon be the default for R
 library(dplyr)
 library(stringr)
+library(stringi)
 options(stringsAsFactors = FALSE)
 
 # download and prepare a dictionary. if you use a dictionary you downloaded and added with my parse_utf8hex_dictionary
